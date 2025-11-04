@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>山茶花 塔羅花語抽卡</title>
+
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f0f8ff; margin: 0; padding: 20px; }
+    h1 { color: #d85ed6; }
+    .btn { padding: 10px 20px; margin: 10px; font-size: 18px; border: none; border-radius: 8px; cursor: pointer; }
+    .card { margin-top: 30px; border: 2px solid #d8b4e2; border-radius: 10px; display: inline-block; padding: 20px; }
+    .card img { width: 245px; height: 360px; }
+    .result { margin-top: 20px; font-size: 20px; color: #333; }
+  </style>
+
+  
+</head>
+<body>
+  <h1>山茶花 塔羅花語抽卡</h1>
+
+<button class="btn" onclick="drawCard()">抽卡</button>
+
+<div id="cardResult" class="card" style="display:none;">
+  <img id="cardImage" src="" alt="卡片" />
+  <p id="cardName"></p>
+  <p id="cardMeaning"></p>
+</div>
+
+  <script>
+    function drawCard() {
+    const cards = [
+      {name: '山茶花 幸運指數5星', image: 'https://i.ibb.co/nqZv1pP8/card-20251021-02-02.png', meaning: '左右逢源，一切順利'},
+      {name: '山茶花 幸運指數4星', image: 'https://i.ibb.co/SC65gCg/card-20251021-02-06.png', meaning: '穩中有近，運勢升溫'},
+      {name: '山茶花 幸運指數3星', image: 'https://i.ibb.co/YT0S9Q5Q/card-20251021-02-10.png', meaning: '穩步前進，耐心等待'}
+    ];
+
+    // 隨機選擇卡片
+    const randomCard = cards[Math.floor(Math.random() * cards.length)];
+
+    // 顯示卡片圖片與內容
+    document.getElementById('cardImage').src = randomCard.image;
+    document.getElementById('cardName').innerText = randomCard.name;
+    document.getElementById('cardMeaning').innerText = randomCard.meaning;
+
+    // 顯示結果
+    document.getElementById('cardResult').style.display = 'block';
+  }
+  </script>
+</body>
+</html>
